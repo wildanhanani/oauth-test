@@ -1,3 +1,109 @@
-<h2>Login Page</h2>
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Login</title>
+</head>
+<style>
+	body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  height: 600px;
+  background-color: rgb(35, 36, 89);
+  align-items: center;
+  font-family: sans-serif;
+}
+.login {
+  background-color: #fff;
+  width: 350px;
+  text-align: center;
+  padding: 40px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.login h2 {
+  margin: 0 0 20px;
+  width: 100%;
+  margin-bottom: 25px;
+}
 
-<a href="/auth/google/url">Google OAuth</a>
+.login .input-group {
+  position: relative;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.login .input-group input {
+  height: 50px;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+.login .input-group span {
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  padding: 0px;
+  text-transform: capitalize;
+  background-color: #fff;
+}
+
+.login .input-group input:focus ~ span,
+.login .input-group input:valid ~ span {
+  top: -12px;
+  left: 20px;
+  font-size: 12px;
+  background-color: pink;
+  padding: 2px 4px;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.login .input-group input[type='submit'] {
+  background-color: pink;
+  border: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  width: 35%;
+  transition: 0.5s;
+}
+
+.login .input-group input[type='submit'] {
+  width: 100%;
+  background-color: rgba(255, 0, 0, 0.5);
+  color: #fff;
+}
+
+</style>
+<body>
+
+<form>
+	<div class="login">
+		<h2> Login </h2>
+		<div class="input-group">
+			<input type="text" required="">
+			<span>Username</span>
+		</div>
+		<div class="input-group">
+			<input type="password" required="">
+			<span>Password</span>
+		</div>
+		<div class="input-group">
+			<input type="submit" value="Login">
+		</div>
+		<div class="input-group" onclick="window.location='/auth/google/url'">
+			<input type="submit" value="Google Oauth" >
+		</div>
+
+	</div>
+</form>
+
+
+</body>
+</html>

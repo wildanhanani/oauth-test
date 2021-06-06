@@ -123,6 +123,7 @@ app.get(`/${redirectURI}`, async (req, res) => {
     const user = await new User({
       socialId: data.id,
       email: data.email,
+      name: data.name,
     }).save();
 
     const token = jwt.sign(data, JWT_SECRET);
