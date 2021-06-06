@@ -104,8 +104,6 @@ async function getTokens({ code, clientId, clientSecret, redirectUri }) {
   }
 }
 
-app.get('/authenticated', async (req, res) => {});
-
 app.get(`/${redirectURI}`, async (req, res) => {
   const code = req.query.code;
 
@@ -116,7 +114,6 @@ app.get(`/${redirectURI}`, async (req, res) => {
     redirectUri: `${SERVER_ROOT_URI}/${redirectURI}`,
   });
 
-  // Fetch the user's profile with the access token and bearer
   try {
     const { data } = await axios.get(
       `https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=${access_token}`,
@@ -136,7 +133,6 @@ app.get(`/${redirectURI}`, async (req, res) => {
     res
       .status(200)
       .json({ message: 'google oauth success', access_token: token });
-    // res.redirect('/auth/success?token=' + token);
   } catch (error) {
     console.error(error);
   }
