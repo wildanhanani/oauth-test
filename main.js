@@ -22,9 +22,6 @@ const port = 900;
 
 app.use(
   cors({
-    // Sets Access-Control-Allow-Origin to the UI URI
-
-    // Sets Access-Control-Allow-Credentials to true
     credentials: true,
   })
 );
